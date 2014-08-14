@@ -38,7 +38,7 @@ public class TestWeatherController {
 	 @Test
 	    public void testValidWeatherDetails(){
 	        WeatherController.GetZipCodeInformation information = new WeatherController.GetZipCodeInformation();
-	        information.setZipCode("94117");
+	        information.setZipCode("98007");
 	        MapBindingResult mapBindingResult = new MapBindingResult(new HashMap(), "zipcode");
 	        ExtendedModelMap model = new ExtendedModelMap();
 	        controller.processWeather(information, mapBindingResult, model);
@@ -47,7 +47,7 @@ public class TestWeatherController {
 	        Assert.assertEquals(0, mapBindingResult.getAllErrors().size());
 	        zipcode zipcode = (zipcode) model.get("weather");
 	        
-	        Assert.assertEquals("San Francisco", zipcode.getCurrentObservation().getDisplayLocation().getCity());
+	        Assert.assertEquals("Bellevue", zipcode.getCurrentObservation().getDisplayLocation().getCity());
 
 	    }
 
